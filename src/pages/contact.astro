@@ -54,17 +54,6 @@ import Base from '../layouts/Base.astro';
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon info-arrow" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
           </a>
-
-          <a href="https://github.com/Nelson-Mart" target="_blank" rel="noopener" class="info-card">
-            <div class="info-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
-            </div>
-            <div>
-              <p class="info-card-label">GitHub</p>
-              <p class="info-card-value">Nelson-Mart</p>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon info-arrow" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
-          </a>
         </div>
       </div>
 
@@ -72,12 +61,8 @@ import Base from '../layouts/Base.astro';
         <p class="info-label">Availability</p>
         <div class="availability-card">
           <div class="avail-row">
-            <span class="dot-green"></span>
-            <span>Open to internships & freelance work</span>
-          </div>
-          <div class="avail-row">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" /></svg>
-            <span>Ghent, Belgium — remote friendly</span>
+            <span>Ghent, Belgium</span>
           </div>
           <div class="avail-row">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 7v5l3 3" /></svg>
@@ -131,7 +116,6 @@ import Base from '../layouts/Base.astro';
   const form     = document.getElementById('contact-form') as HTMLFormElement
   const btn      = document.getElementById('submit-btn') as HTMLButtonElement
   const btnText  = document.getElementById('btn-text')!
-  const btnIcon  = document.getElementById('btn-icon')!
   const feedback = document.getElementById('form-feedback')!
 
   form.addEventListener('submit', async (e) => {
@@ -155,7 +139,6 @@ import Base from '../layouts/Base.astro';
 
     btn.disabled = true
     btnText.textContent = 'Sending…'
-    btnIcon.className = 'icon icon-loader-2 spin'
 
     try {
       await new Promise(r => setTimeout(r, 800))
@@ -168,7 +151,6 @@ import Base from '../layouts/Base.astro';
     } finally {
       btn.disabled = false
       btnText.textContent = 'Send message'
-      btnIcon.className = 'icon icon-send'
     }
   })
 
@@ -321,21 +303,6 @@ import Base from '../layouts/Base.astro';
     font-size: 0.95rem;
     color: var(--accent);
     flex-shrink: 0;
-  }
-
-  .dot-green {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #22c55e;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
-    50%       { box-shadow: 0 0 0 6px rgba(34,197,94,0.05); }
   }
 
   /* ── Form ────────────────────────────────────────────── */

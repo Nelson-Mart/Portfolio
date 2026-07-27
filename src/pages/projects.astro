@@ -8,7 +8,7 @@ const projects = [
   description: "A mobile quiz application with multiple categories and score tracking.",
   stack: ["React Native", "TypeScript", "Expo"],
   type: "Mobile App",
-  year: "2024",
+  year: "2026",
   image: null,
   learned: [
     "Writing proper TypeScript types and interfaces",
@@ -16,7 +16,7 @@ const projects = [
     "Expo's build and deployment workflow",
     "Structuring a mobile app with clean navigation",
   ],
-  github: "https://github.com/Nelson-Mart",
+  github: "https://github.com/pgm-2526-programming-6/opdracht-2-pgm-quiz-Nelson-Mart",
   live: null,
 },
 {
@@ -25,7 +25,7 @@ const projects = [
   description: "The site you're on right now. Built with Astro and Supabase.",
   stack: ["Astro", "Supabase", "CSS"],
   type: "Website",
-  year: "2025",
+  year: "2026",
   image: "/portofolio.png",
   learned: [
     "Astro's file-based routing and layout system",
@@ -33,49 +33,8 @@ const projects = [
     "CSS aurora / mesh gradient effects",
     "Deploying a static site with Vercel",
   ],
-  github: "https://github.com/Nelson-Mart",
+  github: "https://github.com/Nelson-Mart/Portofolio",
   live: "/",
-},
-{
-  id: 3,
-  title: "Full Stack Todo",
-  description: "A full stack todo app with authentication and real-time updates.",
-  stack: ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
-  type: "Web App",
-  year: "2024",
-  image: null,
-  learned: [
-    "Next.js App Router and server components",
-    "Database schema design with Prisma",
-    "Auth with NextAuth.js",
-    "Real-time UI updates with optimistic rendering",
-  ],
-  github: "https://github.com/Nelson-Mart",
-  live: null,
-},
-{
-  id: 4,
-  title: "Test 1",
-  description: "A small test project.",
-  stack: ["HTML", "CSS"],
-  type: "Website",
-  year: "2025",
-  image: null,
-  learned: ["Basic project setup"],
-  github: "https://github.com/Nelson-Mart",
-  live: null,
-},
-{
-  id: 5,
-  title: "Test 2",
-  description: "Another test project.",
-  stack: ["JavaScript"],
-  type: "Web App",
-  year: "2025",
-  image: null,
-  learned: ["Basic project setup"],
-  github: "https://github.com/Nelson-Mart",
-  live: null,
 },
 ]
 
@@ -353,6 +312,8 @@ const typeColors: Record<string, string> = {
 
   function onPointerDown(e: PointerEvent) {
     if (isSmallScreen()) return
+    const target = e.target as HTMLElement
+    if (target.closest('a, button')) return
     isDragging = true; hasDragged = false
     dragStartX = e.clientX; dragStartOff = offsetX
     track.style.transition = 'none'

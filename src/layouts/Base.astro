@@ -45,7 +45,7 @@ const currentPath = Astro.url.pathname;
 
     <header>
       <nav>
-        <a href="/" class="nav-logo">NM</a>
+        <a href="/" class="nav-logo"><img src="/logo.png" alt="Nelson Martinel" /></a>
         <ul class="nav-links">
           <li>
             <a href="/" class:list={["nav-link", { active: currentPath === "/" }]}>
@@ -229,8 +229,8 @@ const currentPath = Astro.url.pathname;
     --border:    #2a2a2d;
     --text:      #e7e6e8;
     --muted:     #6b6b70;
-    --accent:    #7b61ff;
-    --accent-dim:#3d2fad;
+    --accent:    #2563eb;
+    --accent-dim:#1d4ed8;
   }
 
   /* ── Light theme ────────────────────────────────────── */
@@ -240,8 +240,8 @@ const currentPath = Astro.url.pathname;
     --border:    #dde1e9;
     --text:      #111214;
     --muted:     #7a7f8a;
-    --accent:    #2563eb;
-    --accent-dim:#1d4ed8;
+    --accent:    #ec8734;
+    --accent-dim:#c97034;
   }
 
   /* ── Tokens ─────────────────────────────────────────── */
@@ -359,8 +359,13 @@ const currentPath = Astro.url.pathname;
     color: var(--accent);
     letter-spacing: 0.05em;
     transition: opacity 0.15s;
+    display: flex;
   }
-  .nav-logo:hover { opacity: 0.75; }
+  .nav-logo:hover { opacity: 0.90; }
+
+  .nav-logo img {
+    width: 32px;
+  }
 
   .nav-links {
     list-style: none;
