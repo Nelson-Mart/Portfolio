@@ -1,43 +1,116 @@
-# Astro Starter Kit: Minimal
+# Nelson Martinel — Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
+My personal portfolio website, built with [Astro](https://astro.build). Showcases who I am, my projects, and how to get in touch.
+
+**Live site:** [Deployed with Netlify]
+
+---
+
+## ✨ Features
+
+- **Light / dark theme** — animated sun/moon toggle in the nav, theme preference saved to `localStorage` and respected on load (no flash of wrong theme)
+- **Aurora background** — soft, drifting gradient blobs behind the content
+- **Bento-style "Who I am" grid** — tilt-on-hover cards, an animated ticker, and a live-rendered 3D graduation cap (`<model-viewer>`) that follows your cursor
+- **Live LeetCode stats** — fetched at build time from the LeetCode stats API and displayed on the home page
+- **Infinite tech/language carousels** — auto-scrolling chip lists, pausable on hover
+- **Draggable project carousel** — snap-to-center cards that expand to show description, stack, what I learned, and links; falls back to a simple tap-to-expand grid on mobile
+- **Contact form** — client-side validated, opens a pre-filled `mailto:` link (no backend required)
+- Fully responsive, with reduced-motion support for accessibility
+
+## 🛠️ Tech Stack
+
+- [Astro](https://astro.build) — static site framework / file-based routing
+- TypeScript
+- Vanilla CSS (custom properties for theming, no framework)
+- [`<model-viewer>`](https://modelviewer.dev/) for the 3D graduation cap
+- [LeetCode Stats API](https://leetcode-stats.tashif.codes/) for coding stats
+- Deployed on Netlify
+
+## 📁 Project Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+my-portofolio/
+├── .astro/
+├── .vscode/
+├── node_modules/
+├── public/              # static assets (images, favicon, 3D model, etc.)
 ├── src/
+│   ├── images/
+│   ├── layouts/
+│   │   └── Base.astro   # shared layout: <head>, nav, theme toggle, footer
+│   ├── lib/
 │   └── pages/
-│       └── index.astro
-└── package.json
+│       ├── index.astro      # home page
+│       ├── projects.astro   # projects carousel
+│       └── contact.astro    # contact page + form
+├── .env
+├── .gitignore
+├── astro.config.mjs
+├── package.json
+├── package-lock.json
+├── README.md
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Key files
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| File | Purpose |
+|---|---|
+| `src/layouts/Base.astro` | Shared page shell — meta tags, fonts, aurora background, nav bar, animated theme toggle, footer |
+| `src/pages/index.astro` | Hero section, "Who I am" bento grid, tech/language carousels, experience timeline, LeetCode stats, social links |
+| `src/pages/projects.astro` | Draggable/snapping project carousel with expandable cards |
+| `src/pages/contact.astro` | Contact info cards + validated contact form |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🚀 Getting Started
 
-## 🧞 Commands
+### Prerequisites
 
-All commands are run from the root of the project, from a terminal:
+- [Node.js](https://nodejs.org) (LTS recommended)
+- npm (or your package manager of choice)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Installation
 
-## 👀 Want to learn more?
+```bash
+# Clone the repo
+git clone https://github.com/Nelson-Mart/Portofolio.git
+cd Portofolio
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# Install dependencies
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Opens the site locally, usually at `http://localhost:4321`.
+
+### Build
+
+```bash
+npm run build
+```
+
+Outputs a production-ready static site to `dist/`.
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+## 🌐 Deployment
+
+This project is deployed on [Netlify](https://Netlify.com). Pushing to the main branch triggers an automatic build and deploy.
+
+## 📬 Contact
+
+- **Email:** nelsonmartinel2@gmail.com
+- **LinkedIn:** [nelson-martinel](https://linkedin.com/in/nelson-martinel-529546358)
+- **GitHub:** [@Nelson-Mart](https://github.com/Nelson-Mart)
+
+---
+
+© {current year} Nelson Martinel
