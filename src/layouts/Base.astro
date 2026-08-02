@@ -6,6 +6,23 @@ export interface Props {
 
 const { title, description = "Nelson's Portfolio" } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+const pageTitle = `${title} — Nelson`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin).href;
+const ogImageURL = new URL('/portofolio.png', Astro.url.origin).href;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nelson Martinel",
+  "jobTitle": "Full Stack Developer",
+  "url": Astro.url.origin,
+  "sameAs": [
+    "https://github.com/Nelson-Mart",
+    "https://linkedin.com/in/nelson-martinel-529546358",
+    "https://www.instagram.com/nelsonmcoding/"
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -16,6 +33,26 @@ const currentPath = Astro.url.pathname;
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="color-scheme" content="light dark">
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:url" content={canonicalURL} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Structured data -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,7 +68,7 @@ const currentPath = Astro.url.pathname;
       document.documentElement.setAttribute('data-theme', saved || preferred);
     </script>
 
-    <title>{title} — Nelson</title>
+    <title>{pageTitle}</title>
   </head>
 
   <body>
@@ -69,7 +106,7 @@ const currentPath = Astro.url.pathname;
 
     <header>
       <nav>
-        <a href="/" class="nav-logo"><img src="/logo.png" alt="Nelson Martinel" /></a>
+        <a href="/" class="nav-logo"><img src="/logo.png" alt="Nelson Martinel" width="32" height="32" /></a>
         <ul class="nav-links">
           <li>
             <a href="/" class:list={["nav-link", { active: currentPath === "/" }]}>
@@ -370,7 +407,9 @@ const currentPath = Astro.url.pathname;
     z-index: 100;
     height: var(--nav-h);
     border-bottom: 1px solid var(--border);
+    background: var(--bg);
     background: color-mix(in srgb, var(--bg) 80%, transparent);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     transition: background 0.2s, border-color 0.2s;
   }
@@ -593,7 +632,9 @@ const currentPath = Astro.url.pathname;
     justify-content: center;
     align-items: center;
     gap: 12px;
+    background: var(--bg);
     background: color-mix(in srgb, var(--bg) 80%, transparent);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     font-family: var(--font-mono);
     font-size: 0.75rem;

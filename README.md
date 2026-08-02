@@ -16,6 +16,7 @@ My personal portfolio website, built with [Astro](https://astro.build). Showcase
 - **Draggable project carousel** — snap-to-center cards that expand to show description, stack, what I learned, and links; falls back to a simple tap-to-expand grid on mobile
 - **Contact form** — client-side validated, opens a pre-filled `mailto:` link (no backend required)
 - Fully responsive, with reduced-motion support for accessibility
+- **SEO optimizations** This project incorporates structured layout components (like Base.astro with meta tags) and performance-focused practices such as responsive design and reduced-motion support. Additionally, deployment on a global CDN (Netlify) enhances page speed and accessibility, which are key ranking factors.
 
 ## 🛠️ Tech Stack
 
