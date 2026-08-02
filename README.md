@@ -114,4 +114,4 @@ This project is deployed on [Netlify](https://nelson-martinel-portofolio.netlify
 
 ---
 
-© {current year} Nelson Martinel
+© 2026 Nelson Martinel
