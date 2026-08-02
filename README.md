@@ -2,14 +2,14 @@
 
 My personal portfolio website, built with [Astro](https://astro.build). Showcases who I am, my projects, and how to get in touch.
 
-**Live site:** [Deployed with Netlify]
+**Live site:** [[Deployed with Netlify](https://nelson-martinel-portofolio.netlify.app/)]
 
 ---
 
 ## ✨ Features
 
 - **Light / dark theme** — animated sun/moon toggle in the nav, theme preference saved to `localStorage` and respected on load (no flash of wrong theme)
-- **Aurora background** — soft, drifting gradient blobs behind the content
+- **triangle corners background** — triangle lines allong the borders of my background
 - **Bento-style "Who I am" grid** — tilt-on-hover cards, an animated ticker, and a live-rendered 3D graduation cap (`<model-viewer>`) that follows your cursor
 - **Live LeetCode stats** — fetched at build time from the LeetCode stats API and displayed on the home page
 - **Infinite tech/language carousels** — auto-scrolling chip lists, pausable on hover
@@ -103,13 +103,14 @@ npm run preview
 
 ## 🌐 Deployment
 
-This project is deployed on [Netlify](https://Netlify.com). Pushing to the main branch triggers an automatic build and deploy.
+This project is deployed on [Netlify](https://nelson-martinel-portofolio.netlify.app/). Pushing to the main branch triggers an automatic build and deploy.
 
 ## 📬 Contact
 
 - **Email:** nelsonmartinel2@gmail.com
 - **LinkedIn:** [nelson-martinel](https://linkedin.com/in/nelson-martinel-529546358)
 - **GitHub:** [@Nelson-Mart](https://github.com/Nelson-Mart)
+- **Instagram:** [@Nelson-Mart](https://www.instagram.com/nelsonmcoding/)
 
 ---
 
