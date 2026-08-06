@@ -321,6 +321,12 @@ const personSchema = {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     transition: background 0.2s, color 0.2s;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;               
   }
 
   body {
