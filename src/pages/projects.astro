@@ -31,10 +31,27 @@ const projects = [
     "Astro's file-based routing and layout system",
     "Connecting a frontend to Supabase",
     "CSS background effects and animations",
-    "Deploying a static site with Vercel",
+    "Deploying a static site with Netlify",
   ],
   github: "https://github.com/Nelson-Mart/Portofolio",
   live: "https://nelson-martinel-portofolio.netlify.app",
+},
+{
+  id: 3,
+  title: "Webshop pc-buy",
+  description: "A webshop for buying computers and all computer hardware.",
+  stack: ["Laravel", "PHP", "Bootstrap", "MariaDB", "TailwindCSS", "Mollie"],
+  type: "Website",
+  year: "2026",
+  image: "/webshop_pc-buy.png",
+  learned: [
+    "Building a webshop with Laravel and PHP",
+    "MVC architecture and routing in Laravel",
+    "Making payment systems with mollie & emailer webhooks",
+    "Using inline css with tailwindCSS",
+    "Utilizing components from Bootstrap",
+  ],
+  github: "https://github.com/pgmgent-2526-datamanagement/webshop-Nelson-Mart",
 },
 ]
 
@@ -814,7 +831,7 @@ const typeColors: Record<string, string> = {
       display: block;
     }
 
-    .card-image-zone { height: 150px; }
+    .card-image-zone { height: 250px; }
 
     #carousel-outer.grid-mode #carousel-track {
       grid-template-columns: 1fr;
