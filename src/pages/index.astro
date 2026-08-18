@@ -190,24 +190,29 @@ try {
       </div>
       <div class="leetcode-stats">
         <div class="lc-stat">
-          <span class="lc-num">{lc.totalSolved}</span>
+          <span class="lc-num" id="lc-total">{lc.totalSolved}</span>
           <span class="lc-label">Solved</span>
         </div>
+      
         <div class="lc-stat lc-easy">
-          <span class="lc-num">{lc.easySolved}</span>
+          <span class="lc-num" id="lc-easy">{lc.easySolved}</span>
           <span class="lc-label">Easy</span>
         </div>
+      
         <div class="lc-stat lc-medium">
-          <span class="lc-num">{lc.mediumSolved}</span>
+          <span class="lc-num" id="lc-medium">{lc.mediumSolved}</span>
           <span class="lc-label">Medium</span>
         </div>
+      
         <div class="lc-stat lc-hard">
-          <span class="lc-num">{lc.hardSolved}</span>
+          <span class="lc-num" id="lc-hard">{lc.hardSolved}</span>
           <span class="lc-label">Hard</span>
         </div>
       </div>
-      <p class="lc-note">Ranking #{lc.ranking}</p>
-    </div>
+      
+      <p class="lc-note">
+        Ranking #<span id="lc-ranking">{lc.ranking}</span>
+      </p>
   </section>
 
   <!-- ── Social links ──────────────────────────────────── -->
@@ -233,6 +238,39 @@ try {
   </section>
 
   <script>
+    async function updateLeetCodeStats() {
+    try {
+      const res = await fetch(
+        'https://leetcode-stats.tashif.codes/nelsonLeetcoding'
+      )
+
+      if (!res.ok) {
+        throw new Error(`LeetCode API returned ${res.status}`)
+      }
+
+      const data = await res.json()
+
+      const total = document.getElementById('lc-total')
+      const easy = document.getElementById('lc-easy')
+      const medium = document.getElementById('lc-medium')
+      const hard = document.getElementById('lc-hard')
+      const ranking = document.getElementById('lc-ranking')
+
+      if (total) total.textContent = data.totalSolved ?? '—'
+      if (easy) easy.textContent = data.easySolved ?? '—'
+      if (medium) medium.textContent = data.mediumSolved ?? '—'
+      if (hard) hard.textContent = data.hardSolved ?? '—'
+      if (ranking) {
+        ranking.textContent =
+          data.ranking?.toLocaleString() ?? '—'
+      }
+    } catch (error) {
+      console.error('Failed to fetch latest LeetCode stats:', error)
+    }
+  }
+
+  updateLeetCodeStats()
+
     document.querySelectorAll<HTMLElement>('[data-tilt]').forEach(card => {
       card.addEventListener('mousemove', (e: MouseEvent) => {
         const r = card.getBoundingClientRect()
