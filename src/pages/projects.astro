@@ -21,6 +21,23 @@ const projects = [
 },
 {
   id: 2,
+  title: "Webshop pc-buy",
+  description: "A webshop for buying computers and all computer hardware.",
+  stack: ["Laravel", "PHP", "Bootstrap", "MariaDB", "TailwindCSS", "Mollie"],
+  type: "Website",
+  year: "2026",
+  image: "/webshop_pc-buy.png",
+  learned: [
+    "Building a webshop with Laravel and PHP",
+    "MVC architecture and routing in Laravel",
+    "Making payment systems with mollie & emailer webhooks",
+    "Using inline css with tailwindCSS",
+    "Utilizing components from Bootstrap",
+  ],
+  github: "https://github.com/pgmgent-2526-datamanagement/webshop-Nelson-Mart",
+},
+{
+  id: 3,
   title: "Portfolio Website",
   description: "The site you're on right now. Built with Astro and Supabase.",
   stack: ["Astro", "Supabase", "CSS"],
@@ -37,21 +54,21 @@ const projects = [
   live: "https://nelson-martinel-portofolio.netlify.app",
 },
 {
-  id: 3,
-  title: "Webshop pc-buy",
-  description: "A webshop for buying computers and all computer hardware.",
-  stack: ["Laravel", "PHP", "Bootstrap", "MariaDB", "TailwindCSS", "Mollie"],
-  type: "Website",
+  id: 4,
+  title: "Mockify API",
+  description: "A REST API that simulates part of Spotify's API, allowing users to manage tracks, playlists, and artists through CRUD operations, with filtering, sorting, and input validation.",
+  stack: ["Node.js", "Express.js", "Joi", "Jest", "Supertest"],
+  type: "REST API",
   year: "2026",
-  image: "/webshop_pc-buy.png",
+  image: null,
   learned: [
-    "Building a webshop with Laravel and PHP",
-    "MVC architecture and routing in Laravel",
-    "Making payment systems with mollie & emailer webhooks",
-    "Using inline css with tailwindCSS",
-    "Utilizing components from Bootstrap",
+    "Building REST APIs with Express.js",
+    "Implementing CRUD operations for different resources",
+    "Filtering and sorting API data",
+    "Validating requests and testing endpoints",
   ],
-  github: "https://github.com/pgmgent-2526-datamanagement/webshop-Nelson-Mart",
+  github: "https://github.com/Nelson-Mart/Mocklify-nelson",
+  live: null,
 },
 ]
 
@@ -59,6 +76,7 @@ const typeColors: Record<string, string> = {
   "Mobile App": "#f59e0b",
   "Website":    "#22c55e",
   "Web App":    "#7b61ff",
+  "Backend / API": "#ef4444",
 }
 ---
 
